@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2138048C15DCF71E001A886A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138048B15DCF71E001A886A /* UIKit.framework */; };
+		2138048E15DCF71E001A886A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138048D15DCF71E001A886A /* Foundation.framework */; };
+		2138049015DCF71E001A886A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2138048F15DCF71E001A886A /* CoreGraphics.framework */; };
+		2138049615DCF71E001A886A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2138049415DCF71E001A886A /* InfoPlist.strings */; };
+		2138049815DCF71E001A886A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049715DCF71E001A886A /* main.m */; };
+		2138049C15DCF71E001A886A /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049B15DCF71E001A886A /* DMAppDelegate.m */; };
+		2138049F15DCF71E001A886A /* DMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049E15DCF71E001A886A /* DMViewController.m */; };
+		213804A215DCF71E001A886A /* DMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213804A015DCF71E001A886A /* DMViewController.xib */; };
+		213804AA15DCF7C7001A886A /* DMCircularScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213804A915DCF7C7001A886A /* DMCircularScrollView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2138048715DCF71E001A886A /* DMCircularScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMCircularScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2138048B15DCF71E001A886A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2138048D15DCF71E001A886A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2138048F15DCF71E001A886A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2138049315DCF71E001A886A /* DMCircularScrollView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DMCircularScrollView-Info.plist"; sourceTree = "<group>"; };
+		2138049515DCF71E001A886A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2138049715DCF71E001A886A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2138049915DCF71E001A886A /* DMCircularScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMCircularScrollView-Prefix.pch"; sourceTree = "<group>"; };
+		2138049A15DCF71E001A886A /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
+		2138049B15DCF71E001A886A /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
+		2138049D15DCF71E001A886A /* DMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMViewController.h; sourceTree = "<group>"; };
+		2138049E15DCF71E001A886A /* DMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMViewController.m; sourceTree = "<group>"; };
+		213804A115DCF71E001A886A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DMViewController.xib; sourceTree = "<group>"; };
+		213804A815DCF7C7001A886A /* DMCircularScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCircularScrollView.h; path = DMCircularScrollView/DMCircularScrollView.h; sourceTree = "<group>"; };
+		213804A915DCF7C7001A886A /* DMCircularScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCircularScrollView.m; path = DMCircularScrollView/DMCircularScrollView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2138048415DCF71E001A886A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2138048C15DCF71E001A886A /* UIKit.framework in Frameworks */,
+				2138048E15DCF71E001A886A /* Foundation.framework in Frameworks */,
+				2138049015DCF71E001A886A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2138047C15DCF71E001A886A = {
+			isa = PBXGroup;
+			children = (
+				2138049115DCF71E001A886A /* DMCircularScrollView */,
+				2138048A15DCF71E001A886A /* Frameworks */,
+				2138048815DCF71E001A886A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2138048815DCF71E001A886A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2138048715DCF71E001A886A /* DMCircularScrollView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2138048A15DCF71E001A886A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2138048B15DCF71E001A886A /* UIKit.framework */,
+				2138048D15DCF71E001A886A /* Foundation.framework */,
+				2138048F15DCF71E001A886A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2138049115DCF71E001A886A /* DMCircularScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2138049A15DCF71E001A886A /* DMAppDelegate.h */,
+				2138049B15DCF71E001A886A /* DMAppDelegate.m */,
+				2138049D15DCF71E001A886A /* DMViewController.h */,
+				2138049E15DCF71E001A886A /* DMViewController.m */,
+				213804A015DCF71E001A886A /* DMViewController.xib */,
+				21E8DE2E15DD54E40005E963 /* DMCircularScrollView */,
+				2138049215DCF71E001A886A /* Supporting Files */,
+			);
+			path = DMCircularScrollView;
+			sourceTree = "<group>";
+		};
+		2138049215DCF71E001A886A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2138049315DCF71E001A886A /* DMCircularScrollView-Info.plist */,
+				2138049415DCF71E001A886A /* InfoPlist.strings */,
+				2138049715DCF71E001A886A /* main.m */,
+				2138049915DCF71E001A886A /* DMCircularScrollView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21E8DE2E15DD54E40005E963 /* DMCircularScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				213804A815DCF7C7001A886A /* DMCircularScrollView.h */,
+				213804A915DCF7C7001A886A /* DMCircularScrollView.m */,
+			);
+			name = DMCircularScrollView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2138048615DCF71E001A886A /* DMCircularScrollView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 213804A515DCF71E001A886A /* Build configuration list for PBXNativeTarget "DMCircularScrollView" */;
+			buildPhases = (
+				2138048315DCF71E001A886A /* Sources */,
+				2138048415DCF71E001A886A /* Frameworks */,
+				2138048515DCF71E001A886A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DMCircularScrollView;
+			productName = DMCircularScrollView;
+			productReference = 2138048715DCF71E001A886A /* DMCircularScrollView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2138047E15DCF71E001A886A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DM;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Daniele Margutti";
+			};
+			buildConfigurationList = 2138048115DCF71E001A886A /* Build configuration list for PBXProject "DMCircularScrollView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2138047C15DCF71E001A886A;
+			productRefGroup = 2138048815DCF71E001A886A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2138048615DCF71E001A886A /* DMCircularScrollView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2138048515DCF71E001A886A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2138049615DCF71E001A886A /* InfoPlist.strings in Resources */,
+				213804A215DCF71E001A886A /* DMViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2138048315DCF71E001A886A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2138049815DCF71E001A886A /* main.m in Sources */,
+				2138049C15DCF71E001A886A /* DMAppDelegate.m in Sources */,
+				2138049F15DCF71E001A886A /* DMViewController.m in Sources */,
+				213804AA15DCF7C7001A886A /* DMCircularScrollView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2138049415DCF71E001A886A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2138049515DCF71E001A886A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		213804A015DCF71E001A886A /* DMViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				213804A115DCF71E001A886A /* en */,
+			);
+			name = DMViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		213804A315DCF71E001A886A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		213804A415DCF71E001A886A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		213804A615DCF71E001A886A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daniele Margutti (9S2AXJSBXY)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMCircularScrollView/DMCircularScrollView-Prefix.pch";
+				INFOPLIST_FILE = "DMCircularScrollView/DMCircularScrollView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A5976EB2-F22D-41CB-A59C-B70EB582D183";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		213804A715DCF71E001A886A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Daniele Margutti (9S2AXJSBXY)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DMCircularScrollView/DMCircularScrollView-Prefix.pch";
+				INFOPLIST_FILE = "DMCircularScrollView/DMCircularScrollView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A5976EB2-F22D-41CB-A59C-B70EB582D183";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2138048115DCF71E001A886A /* Build configuration list for PBXProject "DMCircularScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213804A315DCF71E001A886A /* Debug */,
+				213804A415DCF71E001A886A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		213804A515DCF71E001A886A /* Build configuration list for PBXNativeTarget "DMCircularScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				213804A615DCF71E001A886A /* Debug */,
+				213804A715DCF71E001A886A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2138047E15DCF71E001A886A /* Project object */;
+}
