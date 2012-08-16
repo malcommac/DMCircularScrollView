@@ -10,7 +10,7 @@ DMCircularScrollView allows you to create an endless paginated scrollview.
 
 Daniele Margutti, <http://www.danielemargutti.com>
 
-![DMCircularScrollView Example Project](http://i.imgur.com/vMNRN.png)
+![DMCircularScrollView Example Project](http://i.imgur.com/xQJ6a.png)
 
 ## Donations
 
