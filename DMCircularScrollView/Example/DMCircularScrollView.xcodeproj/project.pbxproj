@@ -13,9 +13,9 @@
 		2138049615DCF71E001A886A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2138049415DCF71E001A886A /* InfoPlist.strings */; };
 		2138049815DCF71E001A886A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049715DCF71E001A886A /* main.m */; };
 		2138049C15DCF71E001A886A /* DMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049B15DCF71E001A886A /* DMAppDelegate.m */; };
-		2138049F15DCF71E001A886A /* DMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2138049E15DCF71E001A886A /* DMViewController.m */; };
 		213804A215DCF71E001A886A /* DMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213804A015DCF71E001A886A /* DMViewController.xib */; };
-		213804AA15DCF7C7001A886A /* DMCircularScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213804A915DCF7C7001A886A /* DMCircularScrollView.m */; };
+		21BBF892160E196300860D82 /* DMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBF891160E196300860D82 /* DMViewController.m */; };
+		21BBF895160E196B00860D82 /* DMCircularScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21BBF894160E196B00860D82 /* DMCircularScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +29,11 @@
 		2138049915DCF71E001A886A /* DMCircularScrollView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMCircularScrollView-Prefix.pch"; sourceTree = "<group>"; };
 		2138049A15DCF71E001A886A /* DMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMAppDelegate.h; sourceTree = "<group>"; };
 		2138049B15DCF71E001A886A /* DMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMAppDelegate.m; sourceTree = "<group>"; };
-		2138049D15DCF71E001A886A /* DMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMViewController.h; sourceTree = "<group>"; };
-		2138049E15DCF71E001A886A /* DMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMViewController.m; sourceTree = "<group>"; };
 		213804A115DCF71E001A886A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DMViewController.xib; sourceTree = "<group>"; };
-		213804A815DCF7C7001A886A /* DMCircularScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCircularScrollView.h; path = DMCircularScrollView/DMCircularScrollView.h; sourceTree = "<group>"; };
-		213804A915DCF7C7001A886A /* DMCircularScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCircularScrollView.m; path = DMCircularScrollView/DMCircularScrollView.m; sourceTree = "<group>"; };
+		21BBF890160E196300860D82 /* DMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMViewController.h; sourceTree = "<group>"; };
+		21BBF891160E196300860D82 /* DMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMViewController.m; sourceTree = "<group>"; };
+		21BBF893160E196B00860D82 /* DMCircularScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMCircularScrollView.h; path = ../../DMCircularScrollView/DMCircularScrollView.h; sourceTree = "<group>"; };
+		21BBF894160E196B00860D82 /* DMCircularScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMCircularScrollView.m; path = ../../DMCircularScrollView/DMCircularScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,8 @@
 		2138047C15DCF71E001A886A = {
 			isa = PBXGroup;
 			children = (
-				2138049115DCF71E001A886A /* DMCircularScrollView */,
+				2138049115DCF71E001A886A /* DMCircularScrollView Example */,
+				21E8DE2E15DD54E40005E963 /* DMCircularScrollView */,
 				2138048A15DCF71E001A886A /* Frameworks */,
 				2138048815DCF71E001A886A /* Products */,
 			);
@@ -77,17 +78,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2138049115DCF71E001A886A /* DMCircularScrollView */ = {
+		2138049115DCF71E001A886A /* DMCircularScrollView Example */ = {
 			isa = PBXGroup;
 			children = (
 				2138049A15DCF71E001A886A /* DMAppDelegate.h */,
 				2138049B15DCF71E001A886A /* DMAppDelegate.m */,
-				2138049D15DCF71E001A886A /* DMViewController.h */,
-				2138049E15DCF71E001A886A /* DMViewController.m */,
 				213804A015DCF71E001A886A /* DMViewController.xib */,
-				21E8DE2E15DD54E40005E963 /* DMCircularScrollView */,
+				21BBF890160E196300860D82 /* DMViewController.h */,
+				21BBF891160E196300860D82 /* DMViewController.m */,
 				2138049215DCF71E001A886A /* Supporting Files */,
 			);
+			name = "DMCircularScrollView Example";
 			path = DMCircularScrollView;
 			sourceTree = "<group>";
 		};
@@ -105,10 +106,10 @@
 		21E8DE2E15DD54E40005E963 /* DMCircularScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				213804A815DCF7C7001A886A /* DMCircularScrollView.h */,
-				213804A915DCF7C7001A886A /* DMCircularScrollView.m */,
+				21BBF893160E196B00860D82 /* DMCircularScrollView.h */,
+				21BBF894160E196B00860D82 /* DMCircularScrollView.m */,
 			);
-			name = DMCircularScrollView;
+			path = DMCircularScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,8 +178,8 @@
 			files = (
 				2138049815DCF71E001A886A /* main.m in Sources */,
 				2138049C15DCF71E001A886A /* DMAppDelegate.m in Sources */,
-				2138049F15DCF71E001A886A /* DMViewController.m in Sources */,
-				213804AA15DCF7C7001A886A /* DMCircularScrollView.m in Sources */,
+				21BBF892160E196300860D82 /* DMViewController.m in Sources */,
+				21BBF895160E196B00860D82 /* DMCircularScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
