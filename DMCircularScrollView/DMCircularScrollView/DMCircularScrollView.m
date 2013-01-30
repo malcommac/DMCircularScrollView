@@ -162,7 +162,7 @@
 
 - (void) reloadData {
     NSUInteger visiblePages = ceilf(self.frame.size.width/self.pageSize.width);
-    [scrollView setContentSize:CGSizeMake(self.pageSize.width*visiblePages, scrollView.frame.size.width)];
+    [scrollView setContentSize:CGSizeMake(self.pageSize.width*visiblePages, scrollView.frame.size.height)];
     
     if (dataSource != nil) {
         [scrollView setContentOffset:CGPointMake(self.pageSize.width, 0.0f)];
