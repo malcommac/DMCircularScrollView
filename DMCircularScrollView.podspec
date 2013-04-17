@@ -4,5 +4,5 @@ Pod::Spec.new do |s|
   s.summary      = 'Infinite/Circular Scrolling Implementation for UIScrollView'
   s.author       = { 'Daniele Margutti' => 'http://www.danielemargutti.com' }            
   s.source       = { :git => 'https://github.com/alloy/ice-pop.git' }
-  s.source_files = 'Classes', 'DMCircularScrollView/**/*.{h,m}'
+  s.source_files = 'Classes', 'DMCircularScrollView/DMCircularScrollView/*.{h,m}'
 end
