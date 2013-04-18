@@ -10,12 +10,10 @@
 
 // Data Source Handler
 typedef UIView *(^DMCircularScrollViewDataSource)(NSUInteger pageIndex);
-
 // Page Change Delegate Handler
 typedef void(^DMCircularScrollViewPageChanged)(NSUInteger currentPageIndex,NSUInteger previousPageIndex);
 
-@interface DMCircularScrollView : UIView
-{
+@interface DMCircularScrollView : UIView {
     
 }
 
