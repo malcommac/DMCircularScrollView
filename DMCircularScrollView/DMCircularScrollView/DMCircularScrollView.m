@@ -21,7 +21,7 @@
     NSUInteger                                  previousPageIndex;
     NSUInteger                                  currentPageIndex;
     NSUInteger                                  totalPages;
-
+    
     NSMutableArray*                             tempRepresentations;    // temp cached representation of your UIViews (if needed)
     UITapGestureRecognizer *                    singleTapGesture;
 }
@@ -50,9 +50,9 @@
     if (self) {
         tempRepresentations = [[NSMutableArray alloc] init];
         previousPageIndex = 0;
-
+        
         self.clipsToBounds = YES;
-
+        
         scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         scrollView.pagingEnabled = YES;
         scrollView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
@@ -60,8 +60,11 @@
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.delegate = self;
         
-        scrollView.layer.borderColor = [UIColor greenColor].CGColor;
-        scrollView.layer.borderWidth = 2;
+        if (self.displayBorder)
+        {
+            scrollView.layer.borderColor = [UIColor greenColor].CGColor;
+            scrollView.layer.borderWidth = 2;
+        }
         
         scrollView.backgroundColor = [UIColor blueColor];
         self.backgroundColor = [UIColor cyanColor];
@@ -162,6 +165,15 @@
 
 - (void) reloadData {
     NSUInteger visiblePages = ceilf(self.frame.size.width/self.pageSize.width);
+
+    // We need to check to see if self.frame.size.width is evenly divisible
+    // by the pageSize width. If true then we want one more visible
+    // page. 
+    if (fmodf(self.frame.size.width, self.pageSize.width) == 0)
+    {
+        visiblePages += 1;
+    }
+
     [scrollView setContentSize:CGSizeMake(self.pageSize.width*visiblePages, scrollView.frame.size.height)];
     
     if (dataSource != nil) {
@@ -218,12 +230,12 @@
     /*
      ###    Debug purpose only
      */
-  /*  NSMutableString *buff = [[NSMutableString alloc] init];
-    [viewsList enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {
-        [buff appendFormat:@"%d%@,",obj.tag,([obj isKindOfClass:[UIImageView class]] ? @"*":@"")];
-    }];
-    NSLog(@"%@",buff);
-    */
+    /*  NSMutableString *buff = [[NSMutableString alloc] init];
+     [viewsList enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger idx, BOOL *stop) {
+     [buff appendFormat:@"%d%@,",obj.tag,([obj isKindOfClass:[UIImageView class]] ? @"*":@"")];
+     }];
+     NSLog(@"%@",buff);
+     */
     return viewsList;
 }
 
@@ -233,12 +245,12 @@
 
 - (void) relayoutPageItems:(NSUInteger) forceSetPage {
     NSUInteger pageToSet = (forceSetPage != NSUIntegerMax ? forceSetPage : self.currentPageIndex);
-
+    
     currentPageIndex = pageToSet;
     
     [tempRepresentations makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [tempRepresentations removeAllObjects];
-        
+    
     if (handlerPageChange != nil)
         handlerPageChange(currentPageIndex,previousPageIndex);
     
@@ -252,11 +264,11 @@
     CGFloat offset_x = -((self.pageSize.width*pagesToCachePerSide)-self.pageSize.width);
     //NSLog(@"pages per side: %d. cache on left/right = %d",visiblePagesPerSide,pagesToCachePerSide);
     //NSLog(@"start at = -(%0.fx%d) = %0.f",self.pageSize.width,pagesToCachePerSide,offset_x);
-
+    
     for (UIView *targetView in viewsToLoad) {
         targetView.frame = CGRectMake(offset_x, 0, self.pageSize.width, self.pageSize.height);
         [scrollView addSubview:targetView];
-      //  NSLog(@"   [%d] = x,y={%0.f,%0.f} \t\tw,h={%0.f,%0.f}",targetView.tag,targetView.frame.origin.x,targetView.frame.origin.y,targetView.frame.size.width,targetView.frame.size.height);
+        //  NSLog(@"   [%d] = x,y={%0.f,%0.f} \t\tw,h={%0.f,%0.f}",targetView.tag,targetView.frame.origin.x,targetView.frame.origin.y,targetView.frame.size.width,targetView.frame.size.height);
         offset_x+=self.pageSize.width;
     }
     [scrollView setContentOffset:CGPointMake(self.pageSize.width, 0.0f)];
