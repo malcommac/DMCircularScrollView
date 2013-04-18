@@ -66,9 +66,6 @@
             scrollView.layer.borderWidth = 2;
         }
         
-        scrollView.layer.borderColor = [UIColor greenColor].CGColor;
-        scrollView.layer.borderWidth = 2;
-        
         scrollView.backgroundColor = [UIColor blueColor];
         self.backgroundColor = [UIColor cyanColor];
         
