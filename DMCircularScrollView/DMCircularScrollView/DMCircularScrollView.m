@@ -65,9 +65,12 @@
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.delegate                       = self;
         
-        scrollView.layer.borderColor = [UIColor greenColor].CGColor;
-        scrollView.layer.borderWidth = 2;
-        
+        if (self.displayBorder)
+        {
+            scrollView.layer.borderColor = [UIColor greenColor].CGColor;
+            scrollView.layer.borderWidth = 2;
+        }
+
         scrollView.backgroundColor = [UIColor blueColor];
         self.backgroundColor       = [UIColor cyanColor];
         

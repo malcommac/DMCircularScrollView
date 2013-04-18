@@ -25,6 +25,7 @@ typedef void(^DMCircularScrollViewPageChanged)(NSUInteger currentPageIndex,NSUIn
                                                                                             //              of UIVIew, so don't touch it.
 
 @property (nonatomic,assign)    BOOL                                allowTapToChangePage;   // Allows single tap on scroll view side to change next/prev
+@property (nonatomic,assign)    BOOL                                displayBorder;          // Display a green border around the scrollView
 @property (copy)                DMCircularScrollViewPageChanged     handlePageChange;       // Block to catch page change event
 
 // Use this to setup DMCircularScrollView
