@@ -142,15 +142,122 @@
     return ((self.frame.size.width/self.pageSize.width)-1);
 }
 
-#pragma mark - Hanlde Tap To Change Page
+#pragma mark - Handle Tap To Change Page
 
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture {
     UIView *pickedView = [self viewAtLocation:[gesture locationInView:scrollView]];
     [scrollView setContentOffset:CGPointMake(pickedView.frame.origin.x, 0) animated:YES];
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+#pragma mark - Delegate Helper Methods
+
+- (void) delegateSelector:(SEL)selector toDelegateWithArgument:(id)arg
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:selector])
+    {
+        // Disable the 'leaky performSelector' warning from arc
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self.scrollViewDelegate performSelector:selector withObject:arg];
+#pragma clang diagnostic pop
+    }
+}
+
+- (void) delegateSelector:(SEL)selector toDelegateWithArgument:(id)arg andArgument:(id)arg2
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:selector])
+    {
+        // Disable the 'leaky performSelector' warning from arc
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self.scrollViewDelegate performSelector:selector withObject:arg withObject:arg2];
+#pragma clang diagnostic pop
+    }
+}
+
+#pragma mark - UIScrollViewDelegate Methods
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)sv {
     [self relayoutPageItems:NSUIntegerMax];
+    [self delegateSelector:@selector(scrollViewDidEndScrollingAnimation:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)sv
+{
+    [self relayoutPageItems:NSUIntegerMax];
+    [self delegateSelector:@selector(scrollViewDidEndDecelerating:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)sv willDecelerate:(BOOL)decelerate
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
+    {
+        [self.scrollViewDelegate scrollViewDidEndDragging:sv willDecelerate:decelerate];
+    }
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)sv withView:(UIView *)view atScale:(float)scale
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
+    {
+        [self.scrollViewDelegate scrollViewDidEndZooming:sv withView:view atScale:scale];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)sv
+{
+    [self delegateSelector:@selector(scrollViewDidScroll:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)sv
+{
+    [self delegateSelector:@selector(scrollViewDidScrollToTop:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)sv
+{
+    [self delegateSelector:@selector(scrollViewDidZoom:) toDelegateWithArgument:sv];
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)sv
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+    {
+        return [self.scrollViewDelegate scrollViewShouldScrollToTop:sv];
+    }
+    return YES;
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)sv
+{
+    [self delegateSelector:@selector(scrollViewWillBeginDecelerating:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)sv
+{
+    [self delegateSelector:@selector(scrollViewWillBeginDragging:) toDelegateWithArgument:sv];
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)sv withView:(UIView *)view
+{
+    [self delegateSelector:@selector(scrollViewWillBeginZooming:withView:) toDelegateWithArgument:sv andArgument:view];
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)sv withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
+    {
+        [self.scrollViewDelegate scrollViewWillEndDragging:sv withVelocity:velocity targetContentOffset:targetContentOffset];
+    }
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)sv
+{
+    if (self.scrollViewDelegate && [self.scrollViewDelegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
+    {
+        return [self.scrollViewDelegate viewForZoomingInScrollView:sv];
+    }
+    return nil;
 }
 
 #pragma mark - Layout Managment
@@ -237,10 +344,6 @@
      NSLog(@"%@",buff);
      */
     return viewsList;
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)sscrollView {
-    [self relayoutPageItems:NSUIntegerMax];
 }
 
 - (void) relayoutPageItems:(NSUInteger) forceSetPage {
