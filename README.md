@@ -1,6 +1,9 @@
 DMCircularScrollView
 ====================
 
+## ⚠️⚠️ IMPORTANT NOTE
+The following repository is no longer maintained. No fixes or improvements will be made and the project. If you are searching for a pure Swift implementation of circular scroll view **take a look at [`CircularScroller`](https://github.com/malcommac/CircularScroller) project**.
+
 Infinite/Circular Scrolling Implementation for UIScrollView
 DMCircularScrollView implements an infinite .
 When creating paging functionality for your apps, there may be times that an infinite page loop would be desired.
